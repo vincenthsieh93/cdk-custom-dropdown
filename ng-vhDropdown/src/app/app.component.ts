@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, TemplateRef, ViewContainerRef, HostListener, OnInit, AfterViewInit } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
+import { DropdownOverlayService } from './shared/dropdown-overlay.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('search') search: ElementRef;
   @ViewChild('searchTooltip') searchTooltip: TemplateRef<any>;
 
