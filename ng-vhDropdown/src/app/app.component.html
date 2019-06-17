@@ -1,7 +1,12 @@
 <div class="container">
   <div class="content">
-    <div class="search">
+    <div class="search" #search>
       <input type="text" class="search__input">
+      <button class="search__dropdown" (click)="ToggleDropdown(searchOverlayRef, searchPortal)"></button>
     </div>
   </div>
 </div>
+<ng-template #searchTooltip>
+  <div class="tooltip"></div>
+</ng-template>
+

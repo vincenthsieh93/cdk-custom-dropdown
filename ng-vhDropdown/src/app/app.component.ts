@@ -36,19 +36,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    // this.searchWidth = this.search.nativeElement.offsetWidth;
+    this.searchWidth = this.search.nativeElement.offsetWidth;
   }
 
   ngAfterViewInit() {
-    // const ddoSrv = this.dropdownOverlayService;
-    // const searchSrc = { origin: this.search, overlay: this.overlay };
-    // const searchConfig = {
-    //   width: this.searchWidth,
-    //   minWidth: 509
-    // };
+    const ddoSrv = this.dropdownOverlayService;
+    const searchSrc = { origin: this.search, overlay: this.overlay };
+    const searchConfig = {
+      width: this.searchWidth,
+      minWidth: 250
+    };
 
-    // this.searchOverlayRef = ddoSrv.createDropdown(searchSrc, searchConfig);
-    // this.searchPortal = new TemplatePortal(this.searchTooltip, this.viewContainerRef);
+    this.searchOverlayRef = ddoSrv.createDropdown(searchSrc, searchConfig);
+    this.searchPortal = new TemplatePortal(this.searchTooltip, this.viewContainerRef);
   }
 
   /**
