@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, TemplateRef, ViewContainerRef, HostListener, OnInit, AfterViewInit } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
-import { DropdownOverlayService } from './shared/dropdown-overlay.service';
+import { DropdownOverlayService } from './dropdown-overlay.service';
 
 @Component({
   selector: 'app-root',
@@ -36,19 +36,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.searchWidth = this.search.nativeElement.offsetWidth;
+    // this.searchWidth = this.search.nativeElement.offsetWidth;
   }
 
   ngAfterViewInit() {
-    const ddoSrv = this.dropdownOverlayService;
-    const searchSrc = { origin: this.search, overlay: this.overlay };
-    const searchConfig = {
-      width: this.searchWidth,
-      minWidth: 509
-    };
+    // const ddoSrv = this.dropdownOverlayService;
+    // const searchSrc = { origin: this.search, overlay: this.overlay };
+    // const searchConfig = {
+    //   width: this.searchWidth,
+    //   minWidth: 509
+    // };
 
-    this.searchOverlayRef = ddoSrv.createDropdown(searchSrc, searchConfig);
-    this.searchPortal = new TemplatePortal(this.searchTooltip, this.viewContainerRef);
+    // this.searchOverlayRef = ddoSrv.createDropdown(searchSrc, searchConfig);
+    // this.searchPortal = new TemplatePortal(this.searchTooltip, this.viewContainerRef);
   }
 
   /**
